@@ -1,12 +1,20 @@
-import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { StudentComponent } from './student/student.component';
-import { TeacherComponent } from './teacher/teacher.component';
-import {ModulesPathComponent} from './modules-path/modules-path.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AcademicsComponent } from './academics/academics.component';
+import { BuildQualificationComponent } from './student/build-qualification.component';
+import { ChooseQualificationComponent } from './student/choose-qualification.component';
+import { CheckStudentChoicesComponent } from './teacher/check-student-choices.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'student', component: StudentComponent },
-  { path: 'teacher', component: TeacherComponent },
-  { path: 'modules-path', component: ModulesPathComponent }, // Percorso per esami
+  //{ path: '', redirectTo: '/academics', pathMatch: 'full' },
+  { path: 'academics', component: AcademicsComponent },
+  { path: 'student/build-qualification', component: BuildQualificationComponent },
+  { path: 'student/choose-qualification', component: ChooseQualificationComponent },
+  { path: 'teacher/check-choices', component: CheckStudentChoicesComponent },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
