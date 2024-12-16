@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AcademicsComponent } from './academics/academics.component';
-import { BuildQualificationComponent } from './student/build-qualification.component';
-import { ChooseQualificationComponent } from './student/choose-qualification.component';
-import { CheckStudentChoicesComponent } from './teacher/check-student-choices.component';
+import { BuildQualificationComponent } from './student/build-qualification/build-qualification.component';
+import { ChooseQualificationComponent } from './student/choose-qualification/choose-qualification.component';
+import { CheckStudentChoicesComponent } from './teacher/check-student-choices/check-student-choices.component';
 
 export const routes: Routes = [
   //{ path: '', redirectTo: '/academics', pathMatch: 'full' },

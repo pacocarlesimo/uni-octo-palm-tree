@@ -1,0 +1,36 @@
+.svg-container {
+  position: relative;
+}
+
+.modal {
+  position: absolute;
+  width: 500px; /* Il doppio rispetto a prima */
+  background-color: rgba(255, 255, 255, 0.8); /* Più trasparente */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem; /* Aumentiamo leggermente il padding */
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+
+.modal h3 {
+  margin: 0 0 0.5rem 0;
+  color: #003366;
+}
+
+.modal button {
+  margin-top: 1rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.modal button:hover {
+  background-color: #b02a37;
+}
