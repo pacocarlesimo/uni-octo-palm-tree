@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NgForOf, NgIf} from '@angular/common';
+import {QualificationService} from '../../services/qualification-service';
 
 export interface Course {
   nome: string;
@@ -18,6 +19,10 @@ export interface Course {
   ]
 })
 export class BuildQualificationComponent {
+
+  constructor(private qualificationService: QualificationService) {}
+
+
   showModal: boolean = false;
   showSpecialModal: boolean = false;
   currentSemester: number = 0;
@@ -271,11 +276,28 @@ export class BuildQualificationComponent {
     };
 
     this.showRecapModal = true; // Mostra il modale
+
+    this.qualificationService.saveQualificationData({
+      courses: this.savedCourses,
+      finalQualification: this.finalQualification,
+    });
+
+    console.log('Saved Data:', this.savedCourses, this.finalQualification);
+
   }
 
 
   closeRecapModal() {
     this.showRecapModal = false;
+    // Resetta tutto
+    this.savedCourses = [];
+    this.selectedCourses = [];
+    this.filteredCoursesMandatory = [];
+    this.filteredCoursesOptional = [];
+    this.currentSemester = 0;
+    this.selectedUniversity = '';
+    this.showModal = false;
+    this.showSpecialModal = false;
   }
 
 }
